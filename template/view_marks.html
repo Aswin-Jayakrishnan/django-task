@@ -1,0 +1,43 @@
+{% extends 'adminhome.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="" action="">
+  <center>
+        <h3><u>
+
+        </u></h3>
+      </center>
+  <div align="center">
+      <h2 align="center">View Marks</h2>
+    <table width="200" border="1" class="table table-hover">
+      <tr>
+
+        <th>Subject</th>
+        <th>Mark</th>
+        <th></th>
+
+      </tr>
+      {% for i in data %}
+      <tr>
+
+        <td>{{i.subject}}</td>
+        <td>&nbsp;{{i.mark }}</td>
+          <td><a href="/admin_delete_mark/{{ i.id }}" class="btn btn-danger">Delete</a></td>
+
+
+      </tr>
+      {%endfor%}
+
+
+      </table>
+  <table>
+        <tr><a href="/admin_add_mark/{{ uid }}" class="btn btn-primary">Add</a></tr>
+  </table>
+    <br>
+
+  </div>
+</form>
+</body>
+
+
+{% endblock %}
